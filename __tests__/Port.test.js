@@ -2,13 +2,12 @@ const Port = require('../src/Port');
 
 describe('Port contructor', () => {
     describe('with common port set up', () => {
-
         let port;
         let ship;
 
         beforeEach(() => {
             port = new Port('Rosslare');
-            ship = {};
+            ship = jest.fn();
         });
 
         it('returns an Object', () => {
@@ -30,8 +29,8 @@ describe('Port contructor', () => {
 
     it('can remove a ship', () => {
         const port = new Port('Rosslare');
-        const titanic = {};
-        const queenMary = {};
+        const titanic = jest.fn();
+        const queenMary = jest.fn();
 
         port.addShip(titanic);
         port.addShip(queenMary);

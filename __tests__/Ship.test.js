@@ -55,11 +55,7 @@ describe('Ship constructor', () => {
             expect(ship.currentPort).toBe(rosslare);
             expect(rosslare.ships).toContain(ship);
         });
-    });
-
-
-    
-    
+    });  
 });
     
     
