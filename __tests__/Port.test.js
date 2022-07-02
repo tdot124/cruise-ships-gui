@@ -1,22 +1,31 @@
 const Port = require('../src/Port');
 
 describe('Port contructor', () => {
-    it('returns an Object', () => {
-        expect(new Port()).toBeInstanceOf(Object);
-    });
+    describe('with common port set up', () => {
 
-    it('has a name', () => {
-        const port = new Port('Rosslare');
-        expect(port.name).toBe('Rosslare');
-    });
+        let port;
+        let ship;
 
-    it('can add a ship', () => {
-        const port = new Port('Rosslare');
-        const ship = {};
+        beforeEach(() => {
+            port = new Port('Rosslare');
+            ship = {};
+        });
 
-        port.addShip(ship);
+        it('returns an Object', () => {
+            expect(port).toBeInstanceOf(Object);
+        });
+    
+        it('has a name', () => {
+            expect(port.name).toBe('Rosslare');
+        });
+    
+        it('can add a ship', () => {
+                
+            port.addShip(ship);
+    
+            expect(port.ships).toContain(ship);
+        });
 
-        expect(port.ships).toContain(ship);
     });
 
     it('can remove a ship', () => {
@@ -29,6 +38,6 @@ describe('Port contructor', () => {
         port.removeShip(queenMary);
 
         expect(port.ships).toEqual([titanic])
-    })
+    });
 
-})
+});
