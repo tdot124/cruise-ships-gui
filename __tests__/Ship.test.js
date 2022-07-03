@@ -1,5 +1,4 @@
 const Ship = require('../src/Ship');
-const Itinerary = require('../src/Itinerary');
 
 describe('Ship constructor', () => {
     describe('with ports and itinerary setup', () => {
@@ -23,7 +22,10 @@ describe('Ship constructor', () => {
                 removeShip: jest.fn(),
             }
 
-            itinerary = new Itinerary([dublin,rosslare]);
+            itinerary = {
+                ports: [dublin,rosslare]
+            };
+
             ship = new Ship(itinerary);
         });
 
