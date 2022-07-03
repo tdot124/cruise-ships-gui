@@ -6,20 +6,24 @@ describe('Ship constructor', () => {
         let rosslare;
         let itinerary;
         let ship;
+        let port;
 
         beforeEach(() => {
+            port = {
+                addShip: jest.fn(),
+                removeShip: jest.fn()
+            }
+
             dublin = {
                 name: 'Dublin',
                 ships: [],
-                addShip: jest.fn(),
-                removeShip: jest.fn()
+                ...port
             }         
 
             rosslare = {
                 name: 'Rosslare',
                 ships: [],
-                addShip: jest.fn(),
-                removeShip: jest.fn(),
+                ...port
             }
 
             itinerary = {
