@@ -15,6 +15,10 @@
 
         </div>
 
+        <div id="ship">
+
+        </div>
+
     </div>
 
 
@@ -31,6 +35,10 @@
         const itinerary = new Itinerary([dublin,rosslare,fishguard,dover]);
 
         controller.renderPorts(itinerary.ports);
+
+        const ship = new Ship(itinerary);
+
+        controller.renderShip(ship);
     </script>
 
 </body>
