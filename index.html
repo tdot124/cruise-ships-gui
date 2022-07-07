@@ -11,15 +11,27 @@
 <body>
 
     <div id="viewport">
+        <div id="ports">
+
+        </div>
 
     </div>
 
 
     <script src="src/controller.js"></script>
-    <script>
-        const controller = new Controller();
-    </script>
+    <script src="src/Itinerary.js"></script>
     <script src="src/Port.js"></script>
     <script src="src/Ship.js"></script>
+    <script>
+        const controller = new Controller();
+        const dublin = new Port('Dublin');
+        const rosslare = new Port('Rosslare');
+        const fishguard = new Port('Fishguard');
+        const dover = new Port('Dover');
+        const itinerary = new Itinerary([dublin,rosslare,fishguard,dover]);
+
+        controller.renderPorts(itinerary.ports);
+    </script>
+
 </body>
 </html>
