@@ -56,20 +56,40 @@ class Controller {
         const nextPortElement = document.querySelector(`[data-port-index = '${nextPortIndex}']`);
         
         if (!nextPortElement) {
-            return alert('End of the Line!');
-        }
+            this.renderMessage('End of the line!');
+        } else {
+
+        this.renderMessage(`Now departing ${ship.currentPort.name}`);
 
         const shipElement = document.querySelector('#ship');
         const sailInterval = setInterval(() => {
             const shipLeft = parseInt(shipElement.style.left,10);
             if (shipLeft === (nextPortElement.offsetLeft - 32)) {
+
                 ship.setSail();
                 ship.dock();
                 clearInterval(sailInterval);
+
+                this.renderMessage(`You have now arrived at ${ship.currentPort.name}`);
             }
 
             shipElement.style.left = `${shipLeft + 1}px`;
         }, 20);
+    };   
+    }
+
+    renderMessage(message) {
+        const newMessage = document.createElement('div');
+        newMessage.id = 'message';
+        newMessage.innerHTML = message;
+
+        const viewport = document.querySelector('#viewport');
+        viewport.appendChild(newMessage);
+        
+        setTimeout(() => {
+            viewport.removeChild(newMessage);
+        }, 2000);
+
     }
 }
 
