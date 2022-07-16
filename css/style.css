@@ -7,7 +7,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
+
 
 #viewport {
     width: 640px;
@@ -15,6 +18,12 @@ body {
     position: relative;
     overflow-x: auto;
     background-image: url('../images/water0.png');
+}
+
+#buttonMessage {
+    width: 640px;
+    height: 40px;
+    position: relative;
 }
 
 #ports {
@@ -65,7 +74,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width:100%;
+    width: 600px;
     border-bottom: 4px solid black;
     padding: 10px 20px;
     font-family: 'Press Start 2P', cursive;

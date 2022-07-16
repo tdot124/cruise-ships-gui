@@ -83,11 +83,11 @@ class Controller {
         newMessage.id = 'message';
         newMessage.innerHTML = message;
 
-        const viewport = document.querySelector('#viewport');
-        viewport.appendChild(newMessage);
+        const buttonBox = document.querySelector('#buttonMessage');
+        buttonBox.appendChild(newMessage);
         
         setTimeout(() => {
-            viewport.removeChild(newMessage);
+            buttonBox.removeChild(newMessage);
         }, 2000);
 
     }
